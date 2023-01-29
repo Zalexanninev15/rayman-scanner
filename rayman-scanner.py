@@ -18,18 +18,20 @@
 import requests
 from bs4 import BeautifulSoup
 
-print('''rayman-scanner v1.0 Copyright (C) 2023  Zalexanninev15
+print('''rayman-scanner  Copyright (C) 2023  Zalexanninev15
 This program comes with ABSOLUTELY NO WARRANTY.
 This is free software, and you are welcome to redistribute it
 under certain conditions.''')
+print("\nrayman-scanner v1.1 by Zalexanninev15\nGitHub: https://github.com/Zalexanninev15/rayman-scanner\n")
 
-website = input("\nWrite site link (home page): ")
-write_to_file = input("Write links to file? (Y/n), default - n: ")
-next = input("Print the number of next scans? (Y/n), default - n: ")
+base_url = input("Write site link (home page): ")
+write_to_file = input("Write links to file \"links.txt\"? (Y/n), default - n: ")
 
-base_url = website
-if website.endswith('/'):
-    base_url = website[:-1]
+base_url = base_url.replace(" ", "")
+if base_url.endswith('/'):
+    base_url = base_url[:-1]
+if not base_url.startswith("http"):
+    base_url = f"https://{base_url}"
 
 scanned = []
 
@@ -39,56 +41,68 @@ def clean(a_eles):
     for a in a_eles:
         link = a['href']
         # What should not be included in the list of links
-        if link.startswith('#') or link.startswith('mailto:') or link == '/' or 'www.jimdo.com' in link or "/" * 2 in link or "login" in link or "javascript" in link or "privacy" in link:
+        if link.startswith('#') or link.startswith('mailto:') or link == '/' or link == f"{base_url}/" or 'www.jimdo.com' in link or "login" in link or "javascript" in link or "privacy" in link:
             skip_links.append(link)
             continue
 
         if link.startswith('/'):
             link = '{}{}'.format(base_url, link)
 
-        if link.startswith('http://') != True and link.startswith('https://') != True:
+        if not link.startswith('http://') and not link.startswith('https://'):
             link = '{}/{}'.format(base_url, link)
 
-        if link.startswith(base_url) is False:
+        if not link.startswith(base_url):
             continue
 
         if link not in links:
             links.append(link)
 
-    return [links, skip_links]
-
+    return links
 
 def get_next_scan_urls(urls):
     links = []
     for u in urls:
-        if u not in scanned:
+        if not u in scanned:
             links.append(u)
     return links
 
-
 def scan(url):
     if url not in scanned:
-        print('{}'.format(url))
+        if not 'y' in write_to_file.lower():
+            print('{}'.format(url))
         scanned.append(url)
         data = requests.get(url)
         soup = BeautifulSoup(data.text, 'html5lib')
         a_eles = soup.find_all('a', href=True)
-        links, skip_links = clean(a_eles)
+        links = clean(a_eles)
         next_scan_urls = get_next_scan_urls(links)
-        if 'y' in next.lower():
-            print('Number of next scans: {}'.format(len(next_scan_urls)))
         if len(next_scan_urls) != 0:
             for l in next_scan_urls:
                 scan(l)
     return scanned
 
+def site_checker():
+    try:
+        response = requests.get(base_url)
+        if response.ok:
+            return True
+        else:
+            return False
+    except:
+        return False
 
 def main():
-    print("\nFound pages::")
-    links = scan(website)
-    if 'y' in write_to_file.lower():
-        with open("site.txt", 'w') as file:
-            file.writelines(line + '\n' for line in links)
+    if site_checker() and "http" in website:
+        print("\nFound pages:")
+        if 'y' in write_to_file.lower():
+            print("Already looking, you can see the result in the \"list.txt\" file when I do work.")
+        links = scan(base_url)
+        if 'y' in write_to_file.lower():
+            with open("pages.txt", 'w') as file:
+                file.writelines(f"{line}\n" for line in links)
+        print("Done!")
+    else:
+        print("\nThis page either does not exist or is out!\nRun the script again and enter/paste the link")
 
 if __name__ == '__main__':
     main()
