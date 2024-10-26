@@ -7,7 +7,7 @@
 [![](https://img.shields.io/github/stars/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/stargazers)
 [![](https://img.shields.io/github/forks/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/network/members)
 [![](https://img.shields.io/badge/license-GPLv3-ligthgreen.svg)](LICENSE)
-[![](https://img.shields.io/badge/donate-Buy_Me_a_Coffee-F94400.svg)](https://zalexanninev15.jimdofree.com/buy-me-a-coffee)
+[![](https://img.shields.io/badge/Donate-FFDD00.svg?logo=buymeacoffee&logoColor=black)](https://z15.neocities.org/donate)
 
 ## Screenshot
 
@@ -15,7 +15,7 @@
 
 ## Description
 
-Script for scanning the site and extracting links leading to the site pages. Has extended support for sites created in the [Jimdo website builder](https://www.jimdo.com) (like [my current site](https://zalexanninev15.jimdofree.com))
+Script for scanning the site and extracting links leading to the site pages. Has extended support for sites created in the [Jimdo website builder](https://www.jimdo.com) (like [my old site](https://zalexanninev15.jimdofree.com))
 
 ## Usage
 
