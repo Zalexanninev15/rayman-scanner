@@ -1,11 +1,12 @@
 # rayman-scanner
 
-[![](https://img.shields.io/badge/platforms-All_with_Python-3778AE.svg)](https://github.com/Zalexanninev15/rayman-scanner)
-[![](https://img.shields.io/badge/written_on-Python-3776AB.svg?logo=python)](https://github.com/Zalexanninev15/rayman-scanner)
+[![](https://img.shields.io/badge/written_on-Python-%233776AB.svg?logo=python)](https://github.com/Zalexanninev15/rayman-scanner)
 [![](https://img.shields.io/badge/release-v1.1--1-blue.svg)](https://github.com/Zalexanninev15/rayman-scanner)
-[![](https://img.shields.io/github/last-commit/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/commits/master)
+[![](https://img.shields.io/github/last-commit/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/commits/main)
 [![](https://img.shields.io/github/stars/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/stargazers)
 [![](https://img.shields.io/github/forks/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/network/members)
+[![](https://img.shields.io/github/issues/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/issues?q=is%3Aopen+is%3Aissue)
+[![](https://img.shields.io/github/issues-closed/Zalexanninev15/rayman-scanner.svg)](https://github.com/Zalexanninev15/rayman-scanner/issues?q=is%3Aissue+is%3Aclosed)
 [![](https://img.shields.io/badge/license-GPLv3-ligthgreen.svg)](LICENSE)
 [![](https://img.shields.io/badge/Donate-FFDD00.svg?logo=buymeacoffee&logoColor=black)](https://z15.neocities.org/donate)
 
