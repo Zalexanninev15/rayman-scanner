@@ -1,6 +1,6 @@
 # Script for scanning the site and extracting links leading to the site pages
 # Has extended support for sites created in the Jimdo website builder
-# Copyright (C) 2023 Zalexanninev15
+# Copyright (C) 2023-2025 Zalexanninev15
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
